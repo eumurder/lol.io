@@ -12,7 +12,6 @@
             --table-border-color: #ddd;
             --table-header-bg-color: #f2f2f2;
         }
-
         .dark-theme {
             --background-color: linear-gradient(135deg, #333 0%, #000 100%);
             --text-color: #f5f7fa;
@@ -20,7 +19,6 @@
             --table-border-color: #555;
             --table-header-bg-color: #444;
         }
-
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -34,12 +32,10 @@
             flex-direction: column;
             align-items: center;
         }
-
         h1 {
             text-align: center;
             color: #2c3e50;
         }
-
         .theme-toggle {
             position: absolute;
             top: 10px;
@@ -48,13 +44,17 @@
             background: none;
             border: none;
             cursor: pointer;
+            display: flex;
+            align-items: center;
         }
-
+        .theme-toggle span {
+            font-size: 16px;
+            margin-right: 8px;
+        }
         .theme-toggle img {
             width: 30px;
             height: 30px;
         }
-
         .content {
             max-width: 800px;
             margin: 20px auto;
@@ -62,97 +62,108 @@
             background-color: var(--section-bg-color);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
+        .content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
         .content h2 {
             color: #2c3e50;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
-
         .content p, .content ul {
             margin-bottom: 15px;
         }
-
         .content ul {
             padding-left: 20px;
         }
-
         .content li {
             margin-bottom: 8px;
         }
-
         .centered-image {
             display: block;
             margin: 20px auto;
             max-width: 100%;
             height: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .centered-image.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <header id="header">
         <button class="theme-toggle" onclick="toggleTheme()">
+            <span>Смена темы →</span>
             <img src="https://img.icons8.com/?size=100&id=26031&format=png&color=000000" alt="Toggle Theme">
         </button>
         <h1>Результаты опроса</h1>
         <img src="опрошенные1.jpg" alt="Centered Image" class="centered-image">
         <h1>Отношение людей к технологиям</h1>
     </header>
-
     <div class="content">
         <p>Отношение людей к технологиям может быть очень разнообразным и зависит от множества факторов, включая возраст, культурное окружение, уровень образования, профессиональную деятельность и личный опыт. Вот несколько аспектов, которые могут повлиять на отношение людей к технологиям:</p>
-
         <h2>Возрастные различия:</h2>
         <ul>
             <li>Молодёжь, как правило, более открыта к новым технологиям. Они быстрее осваивают новые гаджеты и приложения, так как выросли в эпоху цифровых технологий.</li>
             <li>Пожилые люди могут быть более осторожными или даже скептически настроенными по отношению к новым технологиям из-за недостатка опыта или страха перед сложностью.</li>
         </ul>
-
         <h2>Культурные и социальные факторы:</h2>
         <ul>
             <li>В некоторых культурах технологии воспринимаются как неотъемлемая часть прогресса и развития, в то время как в других могут быть более традиционные взгляды, которые ставят под сомнение необходимость технологических инноваций.</li>
             <li>Социальное окружение также играет важную роль. В городах, где технологии более доступны, люди склонны использовать их чаще.</li>
         </ul>
-
         <h2>Образование и осведомлённость:</h2>
         <ul>
             <li>Люди с более высоким уровнем образования, как правило, имеют лучшее понимание технологий и их потенциала, что способствует более позитивному отношению.</li>
             <li>Образовательные программы и тренинги могут помочь людям лучше понять и оценить преимущества технологий.</li>
         </ul>
-
         <h2>Профессиональная деятельность:</h2>
         <ul>
             <li>В некоторых профессиях технологии являются неотъемлемой частью работы, и сотрудники вынуждены адаптироваться к новым инструментам и программам.</li>
             <li>В других сферах, где технологии менее востребованы, отношение к ним может быть более пассивным.</li>
         </ul>
-
         <h2>Личный опыт и удобство использования:</h2>
         <ul>
             <li>Положительный опыт использования технологий может способствовать их принятию. Например, удобные приложения и устройства, которые облегчают повседневную жизнь, вызывают положительные эмоции.</li>
             <li>Отрицательный опыт, такой как проблемы с конфиденциальностью или сложность использования, может вызвать негативное отношение.</li>
         </ul>
-
         <h2>Влияние на общество и этические соображения:</h2>
         <ul>
             <li>Некоторые люди обеспокоены влиянием технологий на общество, включая вопросы конфиденциальности, зависимости от гаджетов и социальной изоляции.</li>
             <li>Этические соображения, такие как использование искусственного интеллекта и автоматизация, также могут вызывать неоднозначные чувства.</li>
         </ul>
-
         <p>В целом, отношение к технологиям формируется под влиянием множества факторов, и оно может меняться со временем по мере того, как технологии развиваются и становятся более интегрированными в нашу повседневную жизнь.</p>
     </div>
-
     <script>
         function toggleTheme() {
             const body = document.body;
             body.classList.toggle("dark-theme");
             localStorage.setItem('theme', body.classList.contains("dark-theme") ? 'dark' : 'light');
         }
-
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-theme');
         }
+
+        // Animation for content
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.querySelector('.content');
+            const image = document.querySelector('.centered-image');
+
+            setTimeout(() => {
+                content.classList.add('show');
+                image.classList.add('show');
+            }, 100);
+        });
     </script>
 </body>
 </html>
